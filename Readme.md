@@ -4,10 +4,6 @@
 
 Benchy is designed as a benchmarking tool for Go applications. It provides a simple framework for measuring and comparing the performance of different code implementations.
 
-## Contributing
-
-As this is an alpha version, contributions are welcome. Please feel free to submit pull requests or create issues for bugs and feature requests.
-
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
