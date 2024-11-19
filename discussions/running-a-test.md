@@ -13,6 +13,8 @@ The test itself is a dialogue between the test runner and the agent. That means 
 
 The prompts recieved by the test will be handled by a language model, equipped with context regarding the specific test, which will allow it to respond to prompts as a human test runner may. We will call this entity, tasked with overseeing a specific test, the "proctor".
 
+agent_prompt -> test.recieveAgentPrompt() -> prompt_agent
+
 **Evaluation**
 Upon completion of the test, an `submit_test` event will fire, at which point a report file will be generated. The agent itself will submit its "results", which we'll get to when we talk about the structure of the test. But essentially the test itself will be like Advent of Code, where the goal is to produce a certain correct answer. The report file will include information including but not limited to:
 - The dialogue between the agent and the proctor

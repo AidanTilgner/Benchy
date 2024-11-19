@@ -1,0 +1,1 @@
+console.log('Hello, TypeScript in the current directory!');

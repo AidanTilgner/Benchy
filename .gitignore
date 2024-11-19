@@ -1,0 +1,13 @@
+# Node modules
+node_modules/
+
+# TypeScript compiled output
+dist/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# dotenv environment variables
+.env*
