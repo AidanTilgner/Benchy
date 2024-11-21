@@ -4,12 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "tsx index.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@quasarbrains/benchy": "workspace:*"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2"
   }
 }
