@@ -1,8 +1,0 @@
-{
-  "name": "Tool Selection",
-  "measures": "How well does the agent select the right tools for the job?",
-  "grading": {
-    "format": "percentage",
-    "passing": 0.8
-  }
-}
