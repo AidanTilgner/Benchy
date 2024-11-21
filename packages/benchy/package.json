@@ -1,0 +1,22 @@
+{
+  "name": "@quasarbrains/benchy",
+  "version": "0.0.1",
+  "description": "A library for building interactive benchmarks for vertical agents.",
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "tsc"
+  },
+  "author": "Aidan Tilgner",
+  "license": "MIT",
+  "keywords": [],
+  "exports": {
+    "./core": {
+      "types": "./dist/core.d.ts",
+      "default": "./dist/core.js"
+    }
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "typescript": "^5.6.3"
+  }
+}
