@@ -1,8 +1,11 @@
 # Use an official Node.js runtime as a parent image
-FROM node:22
+FROM node:22 AS base
 
 # Set the working directory in the container
 WORKDIR /app
+
+# Copy package.json and pnpm-lock.yaml to working directory
+COPY package.json pnpm-lock.yaml ./
 
 # Make sure that pnpm is loaded
 RUN npm install -g pnpm && pnpm install

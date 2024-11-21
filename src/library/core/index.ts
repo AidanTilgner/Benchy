@@ -29,6 +29,7 @@ export class TestRunner {
 
   constructor({ tests }: ITestRunnerConfig) {
     this.tests = tests;
+    this.proctor = new Proctor({ test: tests[0] });
   }
 
   registerTest(test: ITest) {
