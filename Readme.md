@@ -1,2 +1,2 @@
-# Benchy
-I'm starting over. This is the Benchy monorepo, home of the soon to exist `@quasarbrains/benchy` package.
+# QB
+This is the QuasarBrains monorepo, where services and libraries will be developed and maintained.
