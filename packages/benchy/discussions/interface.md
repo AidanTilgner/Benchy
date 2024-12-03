@@ -21,7 +21,6 @@ Therefore, the test needs to be capable of the following operations:
 Let's just go over an example of this being used in-practice, and how it might look.
 
 ```ts
-});
 import { domain, test, report, Score } from "@quasarbrains/benchy/core";
 import { OpenAIDialogueHandler } from "@quasarbrains/benchy/dialogue";
 import p from "./package.json";
