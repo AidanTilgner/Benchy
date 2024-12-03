@@ -10,7 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@quasarbrains/benchy": "workspace:*"
+    "@quasarbrains/benchy": "workspace:*",
+    "dotenv": "^16.4.5",
+    "openai": "^4.74.0"
   },
   "devDependencies": {
     "tsx": "^4.19.2"
