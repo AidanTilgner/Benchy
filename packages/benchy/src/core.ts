@@ -1,3 +1,4 @@
+import { InterfaceConfig, Outgoing } from "./interface";
 import Logger from "./utils/logger";
 
 class Library {
@@ -192,12 +193,16 @@ interface Report {
   >;
 }
 
-type IReportConfig = {
+type IReportConfig<C> = {
   name: string;
   outDir: string;
+  interface: (properties: InterfaceConfig<C>) => Promise<Outgoing> | Outgoing;
 };
 
-export function report({ name, outDir }: IReportConfig) {
+export function report<InterfaceConfig>({
+  name,
+  outDir,
+}: IReportConfig<InterfaceConfig>) {
   const lib = context.library;
 
   console.info(`Running report ${name}...`);
@@ -220,6 +225,7 @@ export function report({ name, outDir }: IReportConfig) {
       }
     }
   };
+  checkDuplicates();
 
   const report: Report = { name: name, results: {} };
 

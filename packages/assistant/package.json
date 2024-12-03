@@ -1,0 +1,40 @@
+{
+  "name": "@quasarbrains/assistant",
+  "version": "0.3.2",
+  "description": "An infinitely extensible digital assistant framework.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QuasarBrains/Assistant.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc -w",
+    "lint": "eslint ."
+  },
+  "keywords": [
+    "assistant",
+    "gpt",
+    "framework"
+  ],
+  "license": "ISC",
+  "devDependencies": {
+    "@quasarbrains/tsconfig": "workspace:*",
+    "@types/prettier": "^2.7.3",
+    "typescript": "^5.1.3"
+  },
+  "dependencies": {
+    "@types/node": "^20.4.2",
+    "openai": "^4.28.0",
+    "prettier": "^2.5.1"
+  },
+  "bugs": {
+    "url": "https://github.com/QuasarBrains/Assistant/issues"
+  },
+  "homepage": "https://github.com/QuasarBrains/Assistant#readme",
+  "author": ""
+}

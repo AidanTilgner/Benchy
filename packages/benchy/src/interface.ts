@@ -3,29 +3,28 @@ import { Message } from "./core";
 import axios from "axios";
 
 // From the user to the test runner
-interface Incoming {
+export interface Incoming {
   incomingMessage: (message: Message) => Promise<void> | void;
 }
 
 // from the test runner to the user
-interface Outgoing {
+export interface Outgoing {
   outgoingMessage: (message: Message) => Promise<void> | void;
 }
 
-type HTTPInterfaceConfig = {
-  config: {
-    port: number;
-    callbackUrl: string;
-  };
+export type InterfaceConfig<T> = {
+  config: T;
   incoming: Incoming;
 };
 
-export const httpInterface = async ({
-  config,
+export const HTTPInterface = async ({
+  config: { port, callbackUrl },
   incoming,
-}: HTTPInterfaceConfig): Promise<Outgoing> => {
+}: InterfaceConfig<{
+  port: number;
+  callbackUrl: string;
+}>): Promise<Outgoing> => {
   try {
-    const { port, callbackUrl } = config;
     const app = express();
 
     app.post("/message", async (req, res) => {

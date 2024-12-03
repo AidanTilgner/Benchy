@@ -1,5 +1,6 @@
 import { domain, test, report, Score } from "@quasarbrains/benchy/core";
 import { OpenAIDialogueHandler } from "@quasarbrains/benchy/dialogue";
+import { HTTPInterface } from "@quasarbrains/benchy/interface";
 import p from "./package.json";
 import { OpenAI } from "openai";
 import { config } from "dotenv";
