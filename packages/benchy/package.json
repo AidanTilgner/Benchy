@@ -18,13 +18,13 @@
       "types": "./dist/dialogue.d.ts",
       "default": "./dist/dialogue.js"
     },
-    "./interface": {
-      "types": "./dist/interface.d.ts",
-      "default": "./dist/interface.js"
+    "./adapters": {
+      "types": "./dist/adapters.d.ts",
+      "default": "./dist/adapters.js"
     }
   },
   "devDependencies": {
-    "@repo/typescript-config": "workspace:*",
+    "@quasarbrains/tsconfig": "workspace:*",
     "typescript": "^5.6.3"
   },
   "dependencies": {

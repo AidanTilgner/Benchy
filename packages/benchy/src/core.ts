@@ -1,4 +1,4 @@
-import { InterfaceConfig, Outgoing } from "./interface";
+import { AdapterContext, Outgoing } from "./adapters";
 import Logger from "./utils/logger";
 
 class Library {
@@ -21,7 +21,7 @@ class Library {
   }
 }
 
-type Context = {
+export type Context = {
   library: Library;
   logger: Logger;
 };
@@ -193,17 +193,26 @@ interface Report {
   >;
 }
 
-type IReportConfig<C> = {
+type IReportConfig = {
   name: string;
   outDir: string;
-  interface: (properties: InterfaceConfig<C>) => Promise<Outgoing> | Outgoing;
+  adapter: (adapter: AdapterContext) => Promise<Outgoing> | Outgoing;
 };
 
-export function report<InterfaceConfig>({
-  name,
-  outDir,
-}: IReportConfig<InterfaceConfig>) {
+export async function report({ name, outDir, adapter }: IReportConfig) {
   const lib = context.library;
+
+  const { sendMessage } = await adapter({
+    incoming: {
+      recieveMessage: async (message) => {
+        console.log("New message from user: ", message);
+        await sendMessage({
+          content: "Copy, this is benchy, over.",
+        });
+      },
+    },
+    context: context,
+  });
 
   console.info(`Running report ${name}...`);
 

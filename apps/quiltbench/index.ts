@@ -1,6 +1,6 @@
 import { domain, test, report, Score } from "@quasarbrains/benchy/core";
 import { OpenAIDialogueHandler } from "@quasarbrains/benchy/dialogue";
-import { HTTPInterface } from "@quasarbrains/benchy/interface";
+import { HTTPAdapter } from "@quasarbrains/benchy/adapters";
 import p from "./package.json";
 import { OpenAI } from "openai";
 import { config } from "dotenv";
@@ -42,7 +42,15 @@ domain("Mathematics", () => {
 }).describe("Tests the agent's ability to perform mathematical operations");
 
 const { name, version } = p;
+const callbackUrl = `http://localhost:${process.env.SERVER_PORT}`;
+
+console.log("w/ cb: ", callbackUrl);
+
 report({
   name: `${name} ${version}`,
   outDir: "./reports",
+  adapter: HTTPAdapter({
+    callbackUrl,
+    port: Number(process.env.BENCHY_PORT),
+  }),
 });

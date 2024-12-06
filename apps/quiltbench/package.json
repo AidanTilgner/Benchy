@@ -1,10 +1,11 @@
 {
-  "name": "test-agent",
-  "version": "1.0.0",
+  "name": "quiltbench",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx index.ts"
+    "dev": "bun --watch index.ts",
+    "serve": "bun server.ts"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +13,7 @@
   "dependencies": {
     "@quasarbrains/benchy": "workspace:*",
     "dotenv": "^16.4.5",
+    "hono": "^4.6.13",
     "openai": "^4.74.0"
   },
   "devDependencies": {
