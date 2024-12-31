@@ -44,9 +44,7 @@ domain("Mathematics", () => {
 const { name, version } = p;
 const callbackUrl = `http://localhost:${process.env.SERVER_PORT}`;
 
-console.log("w/ cb: ", callbackUrl);
-
-report({
+await report({
   name: `${name} ${version}`,
   outDir: "./reports",
   adapter: HTTPAdapter({

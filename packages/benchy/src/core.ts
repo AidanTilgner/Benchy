@@ -1,5 +1,6 @@
 import { AdapterContext, Outgoing } from "./adapters";
 import Logger from "./utils/logger";
+import { writeFileSync } from "fs";
 
 class Library {
   private _domains: Domain[];
@@ -241,7 +242,12 @@ export async function report({ name, outDir, adapter }: IReportConfig) {
   lib.domains.forEach((d) => {
     console.info(`--- ${d.name} ---`);
     d.tests.forEach((t) => {
+      // Run each test
       console.log("    Test: ", t.name);
     });
   });
+
+  console.info(`Report ${name} complete.`);
+
+  writeFileSync(`${outDir}/${name}.json`, JSON.stringify(report, null, 2));
 }

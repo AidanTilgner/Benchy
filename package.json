@@ -1,12 +1,13 @@
 {
-  "name": "Benchy",
+  "name": "benchy",
   "private": true,
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "build:benchy": "turbo build --filter=@quasarbrains/benchy"
+    "build:benchy": "turbo build --filter=@quasarbrains/benchy",
+    "dev:benchy": "turbo dev --filter=@quasarbrains/benchy --filter=quiltbench"
   },
   "devDependencies": {
     "prettier": "^3.2.5",
